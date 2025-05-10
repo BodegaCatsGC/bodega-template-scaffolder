@@ -10,6 +10,7 @@ module.exports = function(plop) {
     'templates/common',
     'templates/docs',
     'templates/obsidian',
+    'templates/docker', // Added docker folder
     'templates/tests',
     'templates/python-library',
     'templates/node-service',
@@ -33,8 +34,8 @@ module.exports = function(plop) {
       const dest = path.join(process.cwd(), data.name);
       const actions = [];
 
-      // managed, docs, obsidian, common
-      ['managed','docs','obsidian','common'].forEach(folder => {
+      // managed, docs, obsidian, common, docker (local dev env)
+      ['managed','docs','obsidian','common','docker'].forEach(folder => {
         actions.push({
           type: 'addMany',
           base: path.join(CACHE_DIR, 'templates', folder),
